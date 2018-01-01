@@ -1,0 +1,47 @@
+<p>
+  user works!
+</p>
+
+<ul>
+  <li>{{name}}</li>
+  <li>{{age}}</li>
+</ul>
+
+<ul>
+  <li *ngFor = "let hobby of hobbies; let i = index">
+    {{i+1}}: {{hobby}}
+    <button (click)  ="deleteHobby(i)">X</button>
+  </li>
+</ul>
+
+<!-- event -->
+<button (click) = 'onClick()'>button()</button>
+
+<!-- form -->
+<form (submit) = "addHobby(hobby.value)">
+  <div>
+    <label for = "hobby">
+      hobby
+    </label>
+    <input type="text" #hobby>
+  </div>
+</form>
+
+<hr>
+
+<button (click) = 'toggleEdit()'>edit user information</button>
+
+<!-- edit -->
+<div *ngIf = 'isEdit'>
+  <h1>edit user information</h1>
+  <form>
+    <div>
+      <label for="name">Name</label>
+      <input type="text" [(ngModel)] = "name" name = "name">
+    </div>
+    <div>
+      <label for="name">Age</label>
+      <input type="text" [(ngModel)] = "age" name = "age">
+    </div>
+  </form>
+</div>
