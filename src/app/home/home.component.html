@@ -1,4 +1,3 @@
-<h1>Hello World!</h1>
 
 <div class="container">
 
@@ -30,6 +29,8 @@
 
       <button class="btn btn-danger" (click) = "onDeleteClick(user.id)">X</button>
       <button class="btn btn-danger" (click) = "onEditClick(user)">Edit</button>
+
+      <a class = "btn btn-primary pull-right" [(routerLink)] = "'/user/'+user.id">detail</a>
     </div>
   </div>
 </div>
